@@ -12,6 +12,11 @@ export const ContactWrapper = styled.div`
   @media (max-width: 575px) {
     padding: 60px 25px 0 25px;
   }
+  .form-message {
+    margin-top: 16px;
+    text-align: center;
+    color: ${themeGet("colors.primary")};
+  }
 `
 
 export const ContactPageTitle = styled.div`

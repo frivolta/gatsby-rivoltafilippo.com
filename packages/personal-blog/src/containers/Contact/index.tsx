@@ -25,6 +25,30 @@ const SignupSchema = Yup.object().shape({
 })
 
 const Contact: React.SFC<{}> = () => {
+  const [isSent, setSent] = React.useState(false)
+  const [sentMessage, setSentMessage] = React.useState("")
+
+  // Promise, send form and timeout for 700ms to prevent spam.
+  const sendForm = (values: object) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(async () => {
+        try {
+          await fetch("https://formcarry.com/s/YZly-DET_mu", {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(values),
+          })
+          resolve()
+        } catch (err) {
+          reject()
+        }
+      }, 700)
+    })
+  }
+
   return (
     <Formik
       initialValues={{ firstName: "", email: "", message: "" }}
@@ -32,11 +56,19 @@ const Contact: React.SFC<{}> = () => {
         values: MyFormValues,
         actions: FormikActions<MyFormValues>
       ) => {
-        setTimeout(() => {
-          console.log({ values, actions })
-          alert(JSON.stringify(values, null, 2))
-          actions.setSubmitting(false)
-        }, 700)
+        sendForm(values)
+          .then(() => {
+            setSentMessage(
+              "Thanks! I will reach you out as soon as possible :)"
+            )
+            setSent(!isSent)
+          })
+          .then(() => actions.setSubmitting(false))
+          .catch(err => {
+            setSentMessage("Sorry! There was an error sending your message")
+            setSent(!isSent)
+            console.log(err)
+          })
       }}
       validationSchema={SignupSchema}
       render={({
@@ -98,7 +130,9 @@ const Contact: React.SFC<{}> = () => {
                   type="submit"
                   isLoading={isSubmitting ? true : false}
                   loader="Submitting.."
+                  className="no-space"
                 />
+                {isSent && <h4 className="form-message">{sentMessage}</h4>}
               </ContactFromWrapper>
             </ContactWrapper>
           </Form>
