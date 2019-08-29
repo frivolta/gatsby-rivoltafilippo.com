@@ -33,6 +33,9 @@ export const ContactPageTitle = styled.div`
       font-size: 22px;
       margin-bottom: 10px;
     }
+    span {
+      color: ${themeGet("colors.primary")};
+    }
   }
 `
 

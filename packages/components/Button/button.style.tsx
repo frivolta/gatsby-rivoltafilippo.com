@@ -40,6 +40,10 @@ const ButtonStyle = styled('button')<ButtonStyleProps>`
     margin-left: 0;
   }
 
+  &.margin-top {
+    margin-top: 16px;
+  }
+
   &:focus {
     outline: none;
   }

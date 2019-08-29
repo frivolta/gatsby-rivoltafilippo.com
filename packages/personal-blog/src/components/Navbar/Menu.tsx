@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { MenuItemWrapper, MenuItem } from "./navbar.style"
 
 type MenuProps = {
@@ -26,6 +26,16 @@ const Menu: React.FunctionComponent<MenuProps> = ({
     addAllClasses.push(className)
   }
 
+  const Data = useStaticQuery(graphql`
+    query {
+      downloadLink: file(
+        absolutePath: { regex: "/Filippo-Rivolta-Curriculum.pdf/" }
+      ) {
+        publicURL
+      }
+    }
+  `)
+
   return (
     <MenuItemWrapper className={addAllClasses.join(" ")} {...props}>
       {items.map((item, index) => (
@@ -39,6 +49,11 @@ const Menu: React.FunctionComponent<MenuProps> = ({
           )}
         </MenuItem>
       ))}
+      <MenuItem>
+        <a href={Data.downloadLink.publicURL} target="_blank">
+          Curriculum PDF (IT)
+        </a>
+      </MenuItem>
     </MenuItemWrapper>
   )
 }

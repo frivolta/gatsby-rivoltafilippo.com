@@ -37,10 +37,6 @@ const MenuItems = [
     label: "Contact",
     url: "/contact",
   },
-  {
-    label: "Curriculum PDF",
-    url: "/contact",
-  },
 ]
 
 const Navbar: React.FunctionComponent<NavbarProps> = ({

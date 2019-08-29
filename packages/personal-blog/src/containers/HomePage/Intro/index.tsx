@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import SocialProfile from "components/SocialProfile/socialProfile"
 import { IntroWrapper, IntroImage, IntroTitle, Desciption } from "./style"
 import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io"
+import Button from "components/Button/button"
 
 type IntroProps = {}
 
@@ -29,6 +30,11 @@ const Intro: React.FunctionComponent<IntroProps> = props => {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
+      }
+      downloadLink: file(
+        absolutePath: { regex: "/Filippo-Rivolta-Curriculum.pdf/" }
+      ) {
+        publicURL
       }
       site {
         siteMetadata {
@@ -58,6 +64,9 @@ const Intro: React.FunctionComponent<IntroProps> = props => {
         technologies like HTML, CSS, <b>JavaScript</b> and PHP. I am passionate
         about web development with a special affinity for{" "}
         <b>client-side technologies.</b>
+        <a href={Data.downloadLink.publicURL} target="_blank">
+          <Button title="Download CV (IT)" className="no-space margin-top" />
+        </a>
       </Desciption>
       <SocialProfile items={SocialLinks} />
     </IntroWrapper>
