@@ -3,35 +3,20 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import SocialProfile from "components/SocialProfile/socialProfile"
 import { IntroWrapper, IntroImage, IntroTitle, Desciption } from "./style"
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoGithub,
-} from "react-icons/io"
+import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io"
 
 type IntroProps = {}
 
 const SocialLinks = [
   {
-    icon: <IoLogoFacebook />,
-    url: "#",
-    tooltip: "Facebook",
-  },
-  {
     icon: <IoLogoInstagram />,
-    url: "#",
+    url: "https://www.instagram.com/filippo.jsx/",
     tooltip: "Instagram",
   },
   {
-    icon: <IoLogoTwitter />,
-    url: "#",
-    tooltip: "Twitter",
-  },
-  {
-    icon: <IoLogoGithub />,
-    url: "#",
-    tooltip: "Github",
+    icon: <IoLogoLinkedin />,
+    url: "https://www.linkedin.com/in/filippo-rivolta-49b9723b/",
+    tooltip: "Linkedin",
   },
 ]
 
@@ -54,7 +39,6 @@ const Intro: React.FunctionComponent<IntroProps> = props => {
     }
   `)
 
-  const { author, about } = Data.site.siteMetadata
   const AuthorImage = Data.avatar.childImageSharp.fluid
 
   return (
@@ -63,9 +47,18 @@ const Intro: React.FunctionComponent<IntroProps> = props => {
         <Image fluid={AuthorImage} alt="author" />
       </IntroImage>
       <IntroTitle>
-        Hey! I’m <b>{author}</b>
+        Front-end <b>development </b>
+        and Ui Design.
       </IntroTitle>
-      <Desciption>{about}</Desciption>
+      <Desciption>
+        Hi, I am a highly motivated <b>front-end developer</b> and Ui designer
+        crafting rich <b>User Experiences</b> with minimal and aesthetically
+        pleasing interfaces located in <b>Milan, Italy</b>. I have experience in
+        developing websites and web applications based on web standard
+        technologies like HTML, CSS, <b>JavaScript</b> and PHP. I am passionate
+        about web development with a special affinity for{" "}
+        <b>client-side technologies.</b>
+      </Desciption>
       <SocialProfile items={SocialLinks} />
     </IntroWrapper>
   )

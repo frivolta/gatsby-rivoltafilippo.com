@@ -4,12 +4,11 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `StoryHub`,
-    author: `David`,
-    about: `Breakfast procuring no end happiness allowance assurance frank. Met simplicity nor difficulty unreserved who. Entreaties mr conviction dissimilar me
-    astonished estimating cultivated.`,
+    title: `Filippo Rivolta • Front-end developer`,
+    author: `Filippo Rivolta`,
+    about: `As a strong believer in Software Craftmanship, I’m always looking for new things to learn, with Google as my teacher and code editor as my notebook.`,
     description: `A Gatsby Blog`,
-    siteUrl: `https://storyhub-minimal-tarex.redq.now.sh`,
+    siteUrl: `https://www.rivoltafilippo.com`,
   },
   plugins: [
     {

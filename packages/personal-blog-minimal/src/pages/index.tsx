@@ -10,7 +10,7 @@ const PersonalBlogPage = (props: any) => {
   return (
     <Layout>
       <SEO
-        title="Personal Blog Minimal"
+        title="Filippo Rivolta • Front-End Developer"
         description={data.site.siteMetadata.description}
       />
       <PersonalBlog />

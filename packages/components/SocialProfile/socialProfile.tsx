@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   SocialProfileWrapper,
   SocialProfileItem,
-  Tooltip,
+  Tooltip
 } from './SocialProfile.style';
 
 type SocialProfileProps = {
@@ -23,7 +23,7 @@ const SocialProfile: React.FunctionComponent<SocialProfileProps> = ({
     <SocialProfileWrapper {...props}>
       {items.map((item, index) => (
         <SocialProfileItem key={index}>
-          <a href={item.url} aria-label="social profile">
+          <a href={item.url} target="_blank" aria-label="social profile">
             {item.icon || 'icon'}
           </a>
           <Tooltip>{item.tooltip || 'Social Link'}</Tooltip>

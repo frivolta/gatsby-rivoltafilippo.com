@@ -12,7 +12,7 @@ const PersonalBlog: React.FunctionComponent<PersonalBlogProps> = ({
   return (
     <PersonalBlogWrapper {...props}>
       <Intro />
-      <FeaturedPosts />
+      {/* @ToBe: <FeaturedPosts /> */}
       <Posts />
     </PersonalBlogWrapper>
   )

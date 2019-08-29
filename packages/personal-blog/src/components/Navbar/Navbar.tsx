@@ -14,7 +14,7 @@ import HeaderWrapper, {
   SearchCloseButton,
   NavSearchFromWrapper,
 } from "./navbar.style"
-import LogoImage from "../../images/logo.png"
+import LogoImage from "../../images/logo-servo-white.svg"
 
 type NavbarProps = {
   className?: string
@@ -30,12 +30,16 @@ const MenuItems = [
     url: "/about",
   },
   {
+    label: "Latest Project",
+    url: "/latest-project",
+  },
+  {
     label: "Contact",
     url: "/contact",
   },
   {
-    label: "404 Page",
-    url: "/404",
+    label: "Curriculum PDF",
+    url: "/contact",
   },
 ]
 

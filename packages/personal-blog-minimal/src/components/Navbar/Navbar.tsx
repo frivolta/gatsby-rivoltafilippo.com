@@ -30,12 +30,16 @@ const MenuItems = [
     url: "/about",
   },
   {
+    label: "Latest Project",
+    url: "/latest-project",
+  },
+  {
     label: "Contact",
     url: "/contact",
   },
   {
-    label: "404 Page",
-    url: "/404",
+    label: "Curriculum PDF",
+    url: "/curriculum",
   },
 ]
 
