@@ -1,17 +1,15 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 import SocialProfile from "components/SocialProfile/socialProfile"
-import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io"
 import {
-  IntroWrapper,
-  IntroImage,
-  IntroTitle,
-  Desciption,
-} from "../../containers/HomePage/Intro/style"
+  IoLogoInstagram,
+  IoLogoLinkedin,
+  IoIosDownload,
+  IoIosAt,
+} from "react-icons/io"
+import Button from "components/Button/button"
 import {
   AboutWrapper,
-  AboutImage,
   AboutPageTitle,
   AboutDetails,
   SocialProfiles,
@@ -41,6 +39,11 @@ const About: React.FunctionComponent<AboutProps> = props => {
           }
         }
       }
+      downloadLink: file(
+        absolutePath: { regex: "/Filippo-Rivolta-Curriculum.pdf/" }
+      ) {
+        publicURL
+      }
       site {
         siteMetadata {
           author
@@ -50,6 +53,7 @@ const About: React.FunctionComponent<AboutProps> = props => {
     }
   `)
 
+  const downloadLinkUrl = Data.downloadLink.publicURL
   /*   const AuthorImage = Data.avatar.childImageSharp.fluid
    */
   return (
@@ -82,7 +86,26 @@ const About: React.FunctionComponent<AboutProps> = props => {
           apps. After hours I am a geek, a wakeboarder / snowboarder, also I
           love to cook and I admire great food.
         </p>
-
+        <h3>
+          For more info contact me or download my cv following the links below!
+        </h3>
+        <a href={downloadLinkUrl} target="_blank">
+          <Button
+            className="no-space"
+            title="Download CV (IT)"
+            type="button"
+            iconPosition="left"
+            icon={<IoIosDownload />}
+          />
+        </a>
+        <a href="/contact">
+          <Button
+            title="Contact me"
+            type="button"
+            iconPosition="left"
+            icon={<IoIosAt />}
+          />
+        </a>
         <SocialProfiles>
           <SocialProfile items={SocialLinks} />
         </SocialProfiles>

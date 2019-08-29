@@ -10,6 +10,7 @@ const ButtonStyle = styled('button')<ButtonStyleProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-left: 15px;
   color: ${themeGet('colors.white', '#fff')};
   background-color: ${themeGet('colors.black', '#292929')};
   height: ${themeGet('heights.2', '44')}px;
@@ -35,8 +36,16 @@ const ButtonStyle = styled('button')<ButtonStyleProps>`
     }
   }
 
+  &.no-space {
+    margin-left: 0;
+  }
+
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    background-color: ${themeGet('colors.primary')};
   }
 
   &.disabled {
