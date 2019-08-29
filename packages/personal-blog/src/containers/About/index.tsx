@@ -2,12 +2,13 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import SocialProfile from "components/SocialProfile/socialProfile"
+import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io"
 import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-} from "react-icons/io"
+  IntroWrapper,
+  IntroImage,
+  IntroTitle,
+  Desciption,
+} from "../../containers/HomePage/Intro/style"
 import {
   AboutWrapper,
   AboutImage,
@@ -18,33 +19,22 @@ import {
 
 const SocialLinks = [
   {
-    icon: <IoLogoFacebook />,
-    url: "https://www.facebook.com/redqinc/",
-    tooltip: "Facebook",
-  },
-  {
     icon: <IoLogoInstagram />,
-    url: "https://www.instagram.com/redqinc/",
+    url: "https://www.instagram.com/filippo.jsx/",
     tooltip: "Instagram",
   },
   {
-    icon: <IoLogoTwitter />,
-    url: "https://twitter.com/redqinc",
-    tooltip: "Twitter",
-  },
-  {
     icon: <IoLogoLinkedin />,
-    url: "https://www.linkedin.com/company/redqinc/",
-    tooltip: "Linked In",
+    url: "https://www.linkedin.com/in/filippo-rivolta-49b9723b/",
+    tooltip: "Linkedin",
   },
 ]
-
 interface AboutProps {}
 
 const About: React.FunctionComponent<AboutProps> = props => {
   const Data = useStaticQuery(graphql`
     query {
-      avatar: file(absolutePath: { regex: "/about.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
         childImageSharp {
           fluid(maxWidth: 1770, quality: 90) {
             ...GatsbyImageSharpFluid
@@ -60,34 +50,37 @@ const About: React.FunctionComponent<AboutProps> = props => {
     }
   `)
 
+  /*   const AuthorImage = Data.avatar.childImageSharp.fluid
+   */
   return (
     <AboutWrapper>
-      <AboutPageTitle>
-        <h2>About StoryHub</h2>
-        <p>
-          StoryHub is a beautiful Gatsby Blog theme designed to showcase your
-          work in style. Perfect for designers, artists, photographers and
-          developers to use for their portfolio website.
-        </p>
-      </AboutPageTitle>
-
-      <AboutImage>
+      {/* <AboutImage>
         <Image fluid={Data.avatar.childImageSharp.fluid} alt="author" />
-      </AboutImage>
+      </AboutImage> */}
 
       <AboutDetails>
-        <h2>Hey there, what’s up?</h2>
+        <AboutPageTitle>
+          <h2>
+            As a strong believer in <span>Software Craftmanship</span>, I’m
+            always looking for <span>new things to learn</span>, with Google as
+            my teacher and code editor as my notebook.
+          </h2>
+        </AboutPageTitle>
         <p>
-          RedQ Team is a creative agency specializing in building scalable,
-          high-performance web & mobile application. Our main concern is
-          creating more value into the application so that can help our
-          customers to grow their business.
-        </p>
-        <p>
-          RedQ Team is a creative agency specializing in building scalable,
-          high-performance web & mobile application. Our main concern is
-          creating more value into the application so that can help our
-          customers to grow their business.
+          Hi, I am a highly motivated <b>Front-end developer</b> and{" "}
+          <b>Ui Designer</b>
+          crafting rich User Experiences with minimal and aesthetically pleasing
+          interfaces located in <b>Milan, Italy</b>. I have experiece in
+          developing websites and web applications based on web standards
+          technologies like HTML, CSS, <b>JavaScript</b> and PHP. I am
+          passionate about web development with a special affinity for{" "}
+          <b>client-side technologies</b>. The web is my life, exploring web
+          technologies and techniques, developing cool web apps, for this
+          reason, I think working in a team is one of the best ways to improve.
+          Anything that can help me expand my knowledge is always welcome. I
+          love spending time on f<b>ixing little details</b> and optimizing web
+          apps. After hours I am a geek, a wakeboarder / snowboarder, also I
+          love to cook and I admire great food.
         </p>
 
         <SocialProfiles>
