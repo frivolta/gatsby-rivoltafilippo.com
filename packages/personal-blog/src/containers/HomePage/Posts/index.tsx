@@ -40,7 +40,7 @@ const Posts: React.FunctionComponent<PostsProps> = props => {
               tags
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 1170, maxHeight: 690, quality: 90) {
+                  fluid(maxWidth: 1170, maxHeight: 500, quality: 90) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }

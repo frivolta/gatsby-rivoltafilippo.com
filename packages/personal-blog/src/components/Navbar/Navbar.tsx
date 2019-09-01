@@ -31,7 +31,7 @@ const MenuItems = [
   },
   {
     label: "Latest Project",
-    url: "/latest-project",
+    url: "/project-budgety",
   },
   {
     label: "Contact",
