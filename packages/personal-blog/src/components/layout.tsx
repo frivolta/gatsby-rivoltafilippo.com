@@ -25,8 +25,6 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
 
         {children}
 
-        {process.env.INSTAGRAM_TOKEN == "" ? "" : <InstagramShowcase />}
-
         <Newsletter />
         <Footer>
           Copyright &copy; {new Date().getFullYear()}
