@@ -6,7 +6,6 @@ import Navbar from "./Navbar/navbar"
 import Newsletter from "./Newsletter/newsletter"
 import Footer from "./Footer/footer"
 import ScrollUpButton from "./ScrollUpButton/scrollUpButton"
-import InstagramShowcase from "../containers/InstagramShowcase"
 import ResetCss from "./resetCSS"
 import { theme } from "../theme"
 

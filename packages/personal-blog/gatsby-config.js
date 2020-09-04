@@ -60,7 +60,7 @@ module.exports = {
             resolve: `gatsby-remark-mermaid`,
           },
           {
-            resolve: "gatsby-remark-embed-gist",
+            resolve: 'gatsby-remark-embed-gist',
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -120,15 +120,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: 'https://gmail.us3.list-manage.com/subscribe/post?u=7b240cd35ea9001459c3bc91a&amp;id=d0ed7120e8',
-      },
-    },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: 'filippo.jsx',
-        access_token: 'EAAEX7OYXFL0BAJLSZARPEce2p3XL1IzgfAUH2Tc4ypuFHJiQ8W46OTdel5Eb9AFZAZAlM7exQ4mWyevnMOq4GAbuZCZA0M6FTJIEUKHgwvKwENSJNYWlaBhZBnqvePj3Gi8eZCqjZCtou6pvpqZBZBUjvxnIiOkpEvT2WnFRQGokCKKjiwpRxbzs8XmwUONfdYfU0p6ZCzEZBblZAOIxM5xCsrexK',
-        instagram_id: '10219916678889867',
+        endpoint:
+          'https://gmail.us3.list-manage.com/subscribe/post?u=7b240cd35ea9001459c3bc91a&amp;id=d0ed7120e8',
       },
     },
     {
